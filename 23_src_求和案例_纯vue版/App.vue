@@ -7,14 +7,13 @@
 
 <script>
 import Count from './components/Count'
-
 //引入组件
 export default {
     name:'App',
     components:{
-      Count,
+      Count
     },
-
+    
 }
 </script>
 <style>
