@@ -5,17 +5,26 @@
 import Vue from 'vue'
 //引入App组件，它是所有组件的父组件
 import App from './App.vue'
-// 引用vue-router插件
-import VueRouter from 'vue-router'
-// 使用插件
-Vue.use(VueRouter)
-// 引入路由器
-import router from './router'
+
+//引入vue-resource插件库
+import vueResource from 'vue-resource'
+
+//引入store
+import store from './store'
+
+//使用vue-resource插件库
+Vue.use(vueResource)
+
+
+
 
 //关闭Vue的生产提示
 Vue.config.productionTip = false
 //创建vue实例对象 ---vm
 new Vue({
   render: h => h(App),
-  router: router
+  store,
+  beforeCreate(){
+    Vue.prototype.$bus = this //安装全局事件总线
+  }
 }).$mount('#app')
