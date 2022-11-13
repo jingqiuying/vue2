@@ -1,10 +1,11 @@
 <template>
-  <h2>我是About的内容</h2>
+  <h2 style="color: red;">你好我是展示</h2>
 </template>
 
 <script>
 export default {
-    name: 'About',
+    name:'Show'
+
 }
 </script>
 

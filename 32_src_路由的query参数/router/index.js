@@ -11,7 +11,6 @@ import Detail from '../pages/Detail'
 export default new VueRouter({
     routes:[
         {
-            name:'guangyu',
             path:'/about',
             component:About,
             children:[
@@ -34,8 +33,7 @@ export default new VueRouter({
                     component:Message,
                     children: [
                         {
-                            name:'xiangqing',
-                            path: 'detail/:id/:title',
+                            path: 'detail',
                             component: Detail,
                         }
                     ]

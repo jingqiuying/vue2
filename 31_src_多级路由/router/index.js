@@ -6,12 +6,10 @@ import Show from '../pages/son/Show'
 import List from '../pages/son/List'
 import Message from '../pages/Message'
 import News from '../pages/News'
-import Detail from '../pages/Detail'
 // 创建并暴露一个路由器
 export default new VueRouter({
     routes:[
         {
-            name:'guangyu',
             path:'/about',
             component:About,
             children:[
@@ -31,14 +29,7 @@ export default new VueRouter({
             children:[
                 {
                     path:'message',
-                    component:Message,
-                    children: [
-                        {
-                            name:'xiangqing',
-                            path: 'detail/:id/:title',
-                            component: Detail,
-                        }
-                    ]
+                    component:Message
                 },
                 {
                     path:'news',
