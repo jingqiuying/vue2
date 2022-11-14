@@ -8,7 +8,7 @@ module.exports = defineConfig({
     // proxy: 'http://localhost:5000'//
   } */
   //方式二
-  devServer: {
+  /* devServer: {
     proxy:{
       '/jiang':{
         target:'http://localhost:5000',
@@ -21,5 +21,5 @@ module.exports = defineConfig({
         pathRewrite:{'^/qiu':''}
       }
     }
-  }
+  } */
 })

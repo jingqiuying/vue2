@@ -35,7 +35,7 @@ export default new VueRouter({
                     children: [
                         {
                             name:'xiangqing',
-                            path: 'detail',
+                            path: 'detail/:id/:title',
                             component: Detail,
 
                             // props的第一中写法，值为对象中的所有key-value都会以props的形式传给组件。
