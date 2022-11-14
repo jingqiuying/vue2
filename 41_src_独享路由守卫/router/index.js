@@ -2,19 +2,29 @@
 import VueRouter from 'vue-router'
 import Home from '../pages/Home'
 import About from '../pages/About'
+import Show from '../pages/son/Show'
+import List from '../pages/son/List'
 import Message from '../pages/Message'
 import News from '../pages/News'
 import Detail from '../pages/Detail'
 // 创建并暴露一个路由器
 const router = new VueRouter({
-    mode:'hash',
     routes: [
         {
             name: 'guangyu',
             path: '/about',
             component: About,
-            meta:{title:'关于',isAuth:true},
-           
+            meta:{title:'关于'},
+            children: [
+                {
+                    path: 'show',
+                    component: Show
+                },
+                {
+                    path: 'list',
+                    component: List
+                },
+            ]
         },
         {
             name: 'jia',
@@ -46,8 +56,8 @@ const router = new VueRouter({
                     path: 'news',
                     component: News,
                     //独享路由守卫
-                    /* beforeEnter: (to, from, next) => {
-                        console.log('独享路由守卫', to, from);
+                    beforeEnter: (to, from, next) => {
+                        console.log('前置路由守卫', to, from);
                         if (to.meta.isAuth) {
                             if (localStorage.getItem('id') === 'jiangqiuying') {
                                 next()
@@ -57,7 +67,7 @@ const router = new VueRouter({
                         } else {
                             next()
                         }
-                    } */
+                    }
                 },
             ]
         },
@@ -79,8 +89,8 @@ const router = new VueRouter({
     }
 }) */
 //全局后置路由守卫————初始化的时候被调用、每次路由切换之前被调用
-router.afterEach((to,from)=>{
+/* router.afterEach((to,from)=>{
     console.log('后置路由守卫',to,from);
     document.title = to.meta.title || '练习系统'
-})
+}) */
 export default router

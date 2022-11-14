@@ -10,9 +10,10 @@
           <router-link replace class="list-group-item" active-class="active" to="/home/message">Message</router-link>
         </li>
       </ul>
-      <!-- <keep-alive exclude="Message">不缓存指定的组件 -->
+      <!-- <keep-alive exclude="Message">不缓存指定的一个组件 -->
         <!-- <keep-alive>缓存所有展示的组件 -->
-      <keep-alive include="News"><!-- 缓存指定的组件 -->
+      <!-- <keep-alive include="News">缓存指定的一个组件 -->
+        <keep-alive :include="['News','Message']"><!-- 缓存指定的多个组件 -->
         <router-view></router-view>
       </keep-alive>
     </div>
