@@ -7,7 +7,7 @@ import News from '../pages/News'
 import Detail from '../pages/Detail'
 // 创建并暴露一个路由器
 const router = new VueRouter({
-    mode:'hash',
+    mode:'history',
     routes: [
         {
             name: 'guangyu',
