@@ -352,11 +352,55 @@ devServer:{
 
 
 
+## 插槽
 
+1. ​	作用：让父组件可以向子组件指定位置插入HTML结构，也是一种组件间通信的方式，适用于父组件===》子组件
 
+2. 分类：默认插槽、具名插槽、作用域插槽
 
+3. 使用方式：
 
+   1. 默认插槽
 
+      ```
+      父组件：
+      <Category>
+         <div>html结构</div>
+      </Category>
+      子组件：
+      <div class="category">
+         <slot>
+          我是一些默认值，当使用者没有传递具体结构时，我会出现		</slot>
+      </div>
+      ```
+
+   2. 具名插槽
+
+      ```
+      父组件：
+       <Category>
+      	<template slot="center">
+      		<div>HTML结构1</div>
+      	</template>
+      	
+      	<template v-slot="footer">
+      		<div>HTML结构2</div>
+      	</template>
+       </Category>
+      子组件：
+      <template>
+      	<div>
+      		<slot name="center">插槽默认内容。。。</slot>
+      		<slot name="footer">插槽默认内容。。。</slot>
+      	</div>
+      </template>
+      ```
+
+      
+
+   3. 
+
+   
 
 
 
